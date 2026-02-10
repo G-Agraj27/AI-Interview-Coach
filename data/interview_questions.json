@@ -1,0 +1,12 @@
+{
+  "hr": [
+    "Tell me about yourself.",
+    "Why should we hire you?",
+    "What are your strengths and weaknesses?"
+  ],
+  "technical": [
+    "What is machine learning?",
+    "Explain OOPS concepts.",
+    "What is REST API?"
+  ]
+}
