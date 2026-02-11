@@ -35,14 +35,21 @@ def home():
 
 @app.get("/random-question/{category}")
 def random_question(category: str):
-    with open(DATA_PATH, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    try:
+        if not DATA_PATH.exists():
+            return {"error": f"Data file not found at {DATA_PATH}"}
 
-    qs = data.get(category.lower())
-    if not qs:
-        return {"error": "No questions found for this category"}
+        with open(DATA_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-    return {"question": random.choice(qs)}
+        qs = data.get(category.lower())
+        if not qs:
+            return {"error": "No questions found for this category"}
+
+        return {"question": random.choice(qs)}
+    except Exception as e:
+        return {"error": str(e)}
+
 
 @app.post("/submit-answer")
 def submit_answer(payload: AnswerRequest):

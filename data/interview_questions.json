@@ -10,7 +10,3 @@
     "What is REST API?"
   ]
 }
-IDEAL_ANSWERS = {
-    "what is machine learning?": "Machine learning is a field of artificial intelligence where models learn from data to make predictions and improve over time.",
-    "what is rest api?": "A REST API is an interface that allows communication between client and server using standard HTTP methods."
-}
